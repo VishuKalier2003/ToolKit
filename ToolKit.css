@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&family=Recursive:wght@500&family=Smooch&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    min-height: 100vh;
+    font-family: Recursive, sans-serif;
+    background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(47, 47, 47));
+}
+
+span {
+    position: absolute;
+    pointer-events: none;
+    background-color: #fff;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0) translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translateY(-500px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+#a1 {
+    grid-area: one;
+}
+
+#a2 {
+    grid-area: two;
+}
+
+#a3 {
+    grid-area: three;
+}
+
+#a4 {
+    grid-area: four;
+}
+
+#android-grid {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    display: grid;
+    gap: 20px;
+    width: 85%;
+    height: 85%;
+    grid-template-areas: 'one one two three' 'four four two three';
+}
+
+@media (max-width:600px) {
+    #android-grid {
+        grid-template-areas: 'one one one two' 'four four three two';
+    }
+}
+
+@media (max-width:370px) {
+    #android-grid {
+        grid-template-areas: 'one' 'two' 'three' 'four';
+    }
+}
+
+.bases {
+    padding: 10px;
+    transition-duration: 1s;
+    color: white !important;
+}
+
+.bases:hover {
+    box-shadow: 0px 0px 10px 8px #fff;
+    transition-duration: 1s;
+    transition-delay: 0.3s;
+}
+
+#connections {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    font-family: Recursive, sans-serif;
+    height: 85%;
+    gap: 6px;
+    padding-top: 20px;
+}
+
+.sub-bases {
+    z-index: 1;
+    transition-duration: 1s;
+    background-image: linear-gradient(to top left, rgb(0, 0, 0), rgb(35, 35, 35));
+    /*Padding margins in order: top right bottom left*/
+    padding: 10px 0px 0px 2px;
+    color: white;
+}
+
+.sub-bases:hover {
+    box-shadow: 0px 0px 3px 2px #fff;
+    transition-duration: 1s;
+    transition-delay: 0.3s;
+}
